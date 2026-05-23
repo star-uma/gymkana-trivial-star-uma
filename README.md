@@ -162,15 +162,15 @@ python3 -m http.server 8000
 
 ## URLs para los QR físicos
 
-| QR   | Pegar en…            | URL                                                                        |
-| ---- | -------------------- | -------------------------------------------------------------------------- |
-| QR 1 | inicio del recorrido | `https://star-uma.github.io/gymkana-star/pregunta1.html`                   |
-| QR 2 | brazo robótico       | `https://star-uma.github.io/gymkana-star/pregunta2.html`                   |
-| QR 3 | rover marciano       | `https://star-uma.github.io/gymkana-star/pregunta3.html`                   |
-| QR 4 | cuadrúpedo robótico  | `https://star-uma.github.io/gymkana-star/pregunta4.html`                   |
-| QR 5 | panel 3 leyes        | `https://star-uma.github.io/gymkana-star/pregunta5.html`                   |
-| QR 6 | dron                 | `https://star-uma.github.io/gymkana-star/pregunta6.html`                   |
-| QR 7 | cartel STAR          | `https://star-uma.github.io/gymkana-star/pregunta7.html`                   |
+| QR   | URL                                                                        |
+| ---- | -------------------------------------------------------------------------- |
+| QR 1 | `https://star-uma.github.io/gymkana-star/pregunta1.html`                   |
+| QR 2 | `https://star-uma.github.io/gymkana-star/pregunta2.html`                   |
+| QR 3 | `https://star-uma.github.io/gymkana-star/pregunta3.html`                   |
+| QR 4 | `https://star-uma.github.io/gymkana-star/pregunta4.html`                   |
+| QR 5 | `https://star-uma.github.io/gymkana-star/pregunta5.html`                   |
+| QR 6 | `https://star-uma.github.io/gymkana-star/pregunta6.html`                   |
+| QR 7 | `https://star-uma.github.io/gymkana-star/pregunta7.html`                   |
 
 Generación rápida con `qrencode`:
 
