@@ -118,8 +118,7 @@ Cada estación se compone de **3 archivos** con responsabilidades separadas:
 
 El proyecto se publicó durante el evento usando **Netlify** (método drag & drop). Funcionó sin incidencias — el 404 personalizado se sirvió correctamente para las respuestas incorrectas.
 
-**Pendiente:** migrar el despliegue a **GitHub Pages** con auto-deploy al hacer push. Ver [issue #X — Deploy automático con GitHub Pages](#).
-
+**Pendiente:** migrar el despliegue a **GitHub Pages** con auto-deploy al hacer push.
 ---
 
 ### Opción A — Netlify (método probado en el evento)
