@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Respuesta incorrecta · Gymkana STAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#003c6e" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <img class="logo" src="assets/logo.svg" alt="Logo STAR" />
+    <div class="header-text">Gymkana <strong>STAR</strong></div>
+  </header>
+
+  <main class="main">
+    <section class="card error-page">
+      <div class="glitch" aria-hidden="true">404</div>
+      <h1>¡Error de compilación!</h1>
+
+      <p style="margin-bottom:14px;">
+        Esa no es la respuesta correcta… o quizá te has equivocado de letra.
+        Sin presión: <strong>vuelve atrás</strong> y prueba otra vez.
+      </p>
+
+      <p style="font-family: 'Consolas', monospace; font-size: 0.9rem; color: var(--cian-star); margin-bottom: 20px;">
+        // tip: revisa el último QR escaneado
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <button class="btn" onclick="history.length > 1 ? history.back() : location.href='index.html'">
+          ← Volver e intentar de nuevo
+        </button>
+        <a class="btn secondary" href="index.html">Reiniciar la gymkana</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">STAR · Student Team of Advanced Robotics · UMA</footer>
+</body>
+</html>

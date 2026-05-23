@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Estación 1 · Gymkana STAR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#003c6e" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <img class="logo" src="assets/logo.svg" alt="Logo STAR" />
+    <div class="header-text">Gymkana <strong>STAR</strong></div>
+  </header>
+
+  <main class="main">
+    <section class="card">
+      <div class="progress">
+        Estación 1 / 7
+        <div class="progress-dots" aria-hidden="true">
+          <span class="dot current"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="question-tag">// Pregunta · Lógica</div>
+      <p class="question">¡Bienvenido a la Gymkana STAR UMA! Empecemos con algo de lógica: si tuvieses que comparar un robot con una persona, ¿qué sería un <em>sensor</em>?</p>
+
+      <div class="options">
+        <button class="option" data-letter="A" data-answer="musculos" type="button">Sus músculos</button>
+        <button class="option" data-letter="B" data-answer="sentidos" type="button">Sus sentidos</button>
+        <button class="option" data-letter="C" data-answer="cerebro" type="button">Su cerebro</button>
+        <button class="option" data-letter="D" data-answer="corazon" type="button">Su corazón</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">STAR · Student Team of Advanced Robotics · UMA</footer>
+  <div id="loading-overlay"><div class="spinner"></div></div>
+  <script src="js/trivial.js"></script>
+</body>
+</html>

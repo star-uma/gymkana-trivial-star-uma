@@ -1,0 +1,633 @@
+/* ============================================================
+   GYMKANA STAR UMA — Estilos compartidos
+   Paleta:
+     --azul-uma     #003c6e  (fondo principal)
+     --cian-star    #00aec7  (acento técnico)
+     --magenta-star #e91f77  (acento vibrante)
+     --blanco       #ffffff
+   ============================================================ */
+
+:root {
+  --azul-uma: #003c6e;
+  --azul-profundo: #002344;
+  --cian-star: #00aec7;
+  --magenta-star: #e91f77;
+  --blanco: #ffffff;
+  --gris-suave: rgba(255, 255, 255, 0.08);
+  --gris-borde: rgba(255, 255, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  background: radial-gradient(ellipse at top, #00528f 0%, var(--azul-uma) 45%, var(--azul-profundo) 100%);
+  color: var(--blanco);
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Permite que el teclado del móvil no rompa el layout */
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* === HEADER con logo === */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 16px 8px;
+}
+
+.header img.logo {
+  width: 56px;
+  height: auto;
+}
+
+.header .header-text {
+  font-family: 'Consolas', 'Courier New', monospace;
+  letter-spacing: 0.18em;
+  font-size: 0.95rem;
+  color: var(--cian-star);
+  text-transform: uppercase;
+}
+
+.header .header-text strong {
+  color: var(--blanco);
+  font-weight: 700;
+}
+
+/* === Contenedor principal === */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px 32px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* === Card central === */
+.card {
+  background: var(--gris-suave);
+  border: 1px solid var(--gris-borde);
+  border-radius: 18px;
+  padding: 28px 22px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card + .card {
+  margin-top: 16px;
+}
+
+/* === Indicador de progreso === */
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: var(--cian-star);
+  letter-spacing: 0.15em;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.progress-dots .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gris-borde);
+  border: 1px solid var(--gris-borde);
+}
+
+.progress-dots .dot.done {
+  background: var(--cian-star);
+  border-color: var(--cian-star);
+  box-shadow: 0 0 8px var(--cian-star);
+}
+
+.progress-dots .dot.current {
+  background: var(--magenta-star);
+  border-color: var(--magenta-star);
+  box-shadow: 0 0 12px var(--magenta-star);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* === Mensaje de pista (sólo después de acertar) === */
+.hint {
+  background: linear-gradient(135deg, rgba(0, 174, 199, 0.18), rgba(0, 174, 199, 0.06));
+  border-left: 4px solid var(--cian-star);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+  animation: slideIn 0.5s ease-out;
+}
+
+.hint .hint-tag {
+  display: inline-block;
+  font-family: 'Consolas', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cian-star);
+  margin-bottom: 6px;
+}
+
+.hint p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hint strong {
+  color: var(--magenta-star);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === Pregunta === */
+.question-tag {
+  font-family: 'Consolas', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--magenta-star);
+  margin-bottom: 8px;
+}
+
+.question {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.question-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: -12px;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+
+/* === Formulario === */
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid var(--gris-borde);
+  border-radius: 12px;
+  color: var(--blanco);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.answer-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.answer-input:focus {
+  border-color: var(--cian-star);
+  box-shadow: 0 0 0 4px rgba(0, 174, 199, 0.18);
+}
+
+/* === Botón principal === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 18px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: inherit;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--magenta-star);
+  color: var(--blanco);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(233, 31, 119, 0.35);
+}
+
+.btn:hover { background: #ff2887; }
+.btn:active { transform: scale(0.97); }
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--cian-star);
+  color: var(--cian-star);
+  box-shadow: none;
+}
+.btn.secondary:hover { background: rgba(0, 174, 199, 0.12); }
+
+/* === Mensajes inline (error/info) === */
+.message {
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-top: 4px;
+  text-align: center;
+  min-height: 1.5em;
+}
+
+.message.error {
+  background: rgba(233, 31, 119, 0.15);
+  border: 1px solid var(--magenta-star);
+  color: #ffb1d2;
+}
+
+/* === Landing (index.html) === */
+.landing {
+  text-align: center;
+}
+
+.landing .banner {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 14px;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.landing h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.landing h1 span {
+  color: var(--magenta-star);
+}
+
+.landing p.lead {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 22px;
+}
+
+.landing .btn { width: 100%; max-width: 320px; margin-top: 6px; }
+
+.landing .rules {
+  text-align: left;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gris-borde);
+}
+
+.landing .rules h3 {
+  font-family: 'Consolas', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--cian-star);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.landing .rules ol {
+  list-style: none;
+  counter-reset: r;
+}
+.landing .rules li {
+  counter-increment: r;
+  padding: 8px 0 8px 36px;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.landing .rules li::before {
+  content: counter(r);
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--magenta-star);
+  color: var(--blanco);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Final (victoria) === */
+.final {
+  text-align: center;
+}
+.final h1 {
+  font-size: 2.2rem;
+  margin: 14px 0;
+  background: linear-gradient(90deg, var(--cian-star), var(--magenta-star));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.final .trophy {
+  font-size: 4rem;
+  display: inline-block;
+  animation: bounce 1.4s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+.final p {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+/* === 404 === */
+.error-page {
+  text-align: center;
+}
+.error-page .glitch {
+  font-family: 'Consolas', monospace;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--magenta-star);
+  text-shadow: 3px 0 var(--cian-star), -3px 0 var(--blanco);
+  margin-bottom: 6px;
+  animation: glitch 1.6s infinite;
+}
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -2px); }
+  80% { transform: translate(2px, 1px); }
+}
+.error-page h1 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+/* === Footer === */
+.footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 14px 16px 22px;
+  font-family: 'Consolas', monospace;
+  letter-spacing: 0.1em;
+}
+.footer a { color: var(--cian-star); text-decoration: none; }
+
+/* === Opciones tipo test === */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px 16px 56px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--blanco);
+  border: 2px solid var(--gris-borde);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  position: relative;
+  line-height: 1.4;
+}
+
+.option::before {
+  content: attr(data-letter);
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--cian-star);
+  color: var(--azul-profundo);
+  font-family: 'Consolas', monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option:hover {
+  border-color: var(--cian-star);
+  background: rgba(0, 174, 199, 0.1);
+}
+.option:active { transform: scale(0.98); }
+.option:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* === Página de pista (tras acertar) === */
+.hint-page {
+  text-align: center;
+}
+
+.hint-page .check {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cian-star), #00d4f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--azul-profundo);
+  font-weight: 900;
+  box-shadow: 0 0 30px rgba(0, 174, 199, 0.5);
+  animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hint-page h2 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.hint-page .next-hint {
+  background: linear-gradient(135deg, rgba(0, 174, 199, 0.18), rgba(0, 174, 199, 0.06));
+  border: 1px solid var(--cian-star);
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin: 18px 0;
+  text-align: left;
+}
+
+.hint-page .next-hint .next-tag {
+  display: block;
+  font-family: 'Consolas', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cian-star);
+  margin-bottom: 8px;
+}
+
+.hint-page .next-hint p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.hint-page .next-hint strong {
+  color: var(--magenta-star);
+  background: rgba(233, 31, 119, 0.12);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* QR scanning indicator (animado) */
+.scan-indicator {
+  margin-top: 10px;
+  padding: 18px;
+  border: 2px dashed var(--gris-borde);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.scan-indicator .qr-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 3px solid var(--cian-star);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-indicator .qr-icon::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; height: 2px;
+  background: var(--magenta-star);
+  box-shadow: 0 0 10px var(--magenta-star);
+  animation: scan 1.6s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0%, 100% { top: 4px; }
+  50%      { top: calc(100% - 6px); }
+}
+
+.scan-indicator .scan-text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.scan-indicator .scan-text strong {
+  color: var(--cian-star);
+  font-family: 'Consolas', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+/* === Overlay de carga al pulsar Enviar === */
+#loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 35, 68, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#loading-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#loading-overlay .spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--gris-borde);
+  border-top-color: var(--magenta-star);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === Confeti canvas === */
+#confetti {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* === Tweaks responsive === */
+@media (min-width: 600px) {
+  .question { font-size: 1.4rem; }
+  .landing h1 { font-size: 2.4rem; }
+  .header img.logo { width: 64px; }
+}

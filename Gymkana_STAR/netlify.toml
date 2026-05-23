@@ -1,0 +1,29 @@
+# Configuración de Netlify para la Gymkana STAR.
+# Por defecto, Netlify usa /404.html como página de error 404 si existe en
+# la raíz del sitio — y eso es exactamente lo que queremos para la gymkana:
+# cuando el usuario teclea una respuesta incorrecta, intenta cargar
+# `<respuesta>.html`, no existe, y Netlify devuelve nuestro 404 personalizado.
+
+[build]
+  publish = "."
+
+# Cabeceras de seguridad y caché.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Sin caché en HTML para que los cambios se vean inmediatamente
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
