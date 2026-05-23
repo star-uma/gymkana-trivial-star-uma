@@ -100,15 +100,15 @@ Cada estación se compone de **3 archivos** con responsabilidades separadas:
 
 ## Cadena de estaciones (edición actual)
 
-| #   | Pregunta         | Tipo  | Respuesta correcta | Stub             | Pista         | Lugar físico siguiente  |
-| --- | ---------------- | ----- | ------------------ | ---------------- | ------------- | ----------------------- |
-| 1   | `pregunta1.html` | Texto | `arduino`          | `arduino.html`   | `pista1.html` | brazo robótico          |
-| 2   | `pregunta2.html` | Test  | `ros`              | `ros.html`       | `pista2.html` | rover marciano          |
-| 3   | `pregunta3.html` | Texto | `curiosity`        | `curiosity.html` | `pista3.html` | cuadrúpedo robótico     |
-| 4   | `pregunta4.html` | Test  | `spot`             | `spot.html`      | `pista4.html` | panel de las 3 leyes    |
-| 5   | `pregunta5.html` | Texto | `asimov`           | `asimov.html`    | `pista5.html` | dron                    |
-| 6   | `pregunta6.html` | Test  | `imu`              | `imu.html`       | `pista6.html` | cartel del equipo STAR  |
-| 7   | `pregunta7.html` | Texto | `hexagono`         | `hexagono.html`  | `final.html`  | (final · trofeo)        |
+| #   | Pregunta         | Tipo  | Respuesta correcta | Stub             | Pista         |
+| --- | ---------------- | ----- | ------------------ | ---------------- | ------------- |
+| 1   | `pregunta1.html` | Texto | `arduino`          | `arduino.html`   | `pista1.html` |
+| 2   | `pregunta2.html` | Test  | `ros`              | `ros.html`       | `pista2.html` |
+| 3   | `pregunta3.html` | Texto | `curiosity`        | `curiosity.html` | `pista3.html` |
+| 4   | `pregunta4.html` | Test  | `spot`             | `spot.html`      | `pista4.html` |
+| 5   | `pregunta5.html` | Texto | `asimov`           | `asimov.html`    | `pista5.html` |
+| 6   | `pregunta6.html` | Test  | `imu`              | `imu.html`       | `pista6.html` |
+| 7   | `pregunta7.html` | Texto | `hexagono`         | `hexagono.html`  | `final.html`  |
 
 ---
 
